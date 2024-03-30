@@ -1,0 +1,34 @@
+
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+
+<div id="testimonial" class="testimonial-section">
+    <div class="container">
+        <!-- Start Testimonials Carousel -->
+        
+        <div id="testimonial-carousel" class="testimonials-carousel">
+            <!-- Testimonial 1 -->
+            {% for t in testmonial %}
+            <div class="testimonials item">
+                <div class="testimonial-content">
+                    <img src="{{t.image.url}}" alt="" >
+                    <div class="testimonial-author">
+                        <div class="author">{{t.author}}</div>
+                        <div class="designation">{{t.designation}}</div>
+                    </div>
+                    <p>{{t.description1}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            
+            <!-- Testimonial 2 -->
+            
+        </div>
+
+
+        <!-- End Testimonials Carousel -->
+    </div>
+</div> 
+
+{% endblock body %}

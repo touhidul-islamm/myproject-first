@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+
+<section id="service" class="services-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title text-center">
+                    <h3>Our Services</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for c in service %}
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="feature-2">
+                    <div class="media">
+                        <div class="pull-left">
+                            <i class="{{c.icon}}"></i>
+                            <div class="border"></div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="Web Design">{{c.title}}</h4>
+                            <p>{{c.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.col-md-4 -->
+            {% endfor %}
+           
+            
+            
+            
+           
+            
+        </div><!-- /.row -->
+    
+    </div><!-- /.container -->
+</section>
+{% endblock body %}

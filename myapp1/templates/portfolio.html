@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+
+<section id="portfolio" class="portfolio-section-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title text-center">
+                    <h3>Our Portfolio</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate</p>
+                </div>                        
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                
+                <!-- Start Portfolio items -->
+                <ul id="portfolio-list">
+                    {% for m in portfolio %}
+                    <li>
+                        <div class="portfolio-item">
+                            <img src="{{m.image.url}}" class="img-responsive" alt="" />
+                            <div class="portfolio-caption">
+                                <h4>{{m.title}}</h4>
+                                <a href="#portfolio-modal" data-toggle="modal" class="link-1"><i class="fa fa-magic"></i></a>
+                                <a href="#" class="link-2"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                    
+                    
+                    
+                </ul>
+                <!-- End Portfolio items -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-modal modal fade" id="portfolio-modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title text-center">
+                            <h3>Portfolio Details</h3>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/img1.jpg' %}" class="img-responsive" alt="..">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{% static 'images/portfolio/img1.jpg' %}" class="img-responsive" alt="..">
+                        </div>
+                        
+                    </div><!-- /.row -->
+                </div>                
+            </div>
+        </div>
+        {% endblock body %}
